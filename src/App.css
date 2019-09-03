@@ -1,33 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap');
 .App {
   text-align: center;
+  font-family: 'Montserrat';
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.set_nav{
+  background-color:  rgba(245, 245, 245);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.set_nav a {
+  color: black;
+  font-family: 'Montserrat';
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.set_top_margin{
+  margin-top: 3rem;
+  background-color: rgba(245, 245, 245, 0.795);
+  padding: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.set_top_margin h1{
+color: black;
+}
+
+.set_top_margin button {
+  background-color: rgb(54, 40, 255)
+}
+
+.set_top_margin button :hover{
+  background-color: rgba(245, 245, 245, 0.795)
 }
