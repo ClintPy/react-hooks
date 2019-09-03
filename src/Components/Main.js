@@ -5,7 +5,7 @@ import firebase from "../Firebase/config";
 const Main = () => {
     return(
         <React.Fragment>
-            <p>Main</p>
+            <p>Main h</p>
         </React.Fragment>
     )
 };
