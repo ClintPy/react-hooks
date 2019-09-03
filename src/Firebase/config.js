@@ -28,6 +28,7 @@ class Firebase {
       .signInWithEmailAndPassword(email, password)
       .catch(err => {
         console.log(err);
+        return err;
       });
     return user;
   }
@@ -37,6 +38,7 @@ class Firebase {
       .createUserWithEmailAndPassword(email, password)
       .catch(err => {
         console.log(err);
+        return err;
       });
     return user;
   }
@@ -48,10 +50,10 @@ class Firebase {
         console.log(err);
       });
   }
-  async getUserState(){
+  async getUserState() {
     return new Promise(resolve => {
-      this.auth.onAuthStateChanged(resolve)
-    })
+      this.auth.onAuthStateChanged(resolve);
+    });
   }
 }
 

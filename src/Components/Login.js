@@ -11,9 +11,14 @@ const Login = () => {
 
   const login = async e => {
     e.preventDefault();
-    let user = await firebase.login(email, password);
-    console.log(user);
-    setRedirect(true);
+    let response = await firebase.login(email, password);
+    if (response.hasOwnProperty("message")) {
+      console.log(response.message);
+    }
+    if (response.hasOwnProperty("user")) {
+      console.log(response.user);
+      setRedirect(true);
+    }
   };
 
   const redirect = routeRedirect;
