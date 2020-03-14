@@ -55,7 +55,7 @@ const Nav = props => {
 
   return (
     <Navbar color="light" light expand="md">
-      <NavbarBrand href="/">React Firebase Hooks</NavbarBrand>
+      <NavbarBrand href="/">Recipe App</NavbarBrand>
       <Navigation className="m-auto" navabar>
         <NavItem>
           <NavLink>

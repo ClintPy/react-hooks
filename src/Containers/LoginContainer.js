@@ -2,22 +2,16 @@ import React, { useState } from "react";
 import { Redirect, withRouter } from "react-router-dom";
 
 // styled components from reactstrap
-import {
-  Container,
-  Col,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Button,
-  FormText,
-} from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 // Firebase
 import firebase from "../Firebase/config";
 
 // Loader
-import Loader from "./Loader";
+import Loader from "../Components/Loader";
+
+// Login Component
+import LoginComponent from "../Components/LoginComponent";
 
 import "../App.css";
 
@@ -58,40 +52,20 @@ const Login = () => {
     return <Loader />;
   }
   return (
-    <Container className="App">
+    <Container>
       <h1 style={{ textAlign: "center" }}>Login</h1>
-      <Form onSubmit={login} className="form">
-        <Col>
-          <FormGroup>
-            <Label for="email">Email:</Label>
-            <Input
-              type="email"
-              name="email"
-              placeholder="Email"
-              onChange={e => {
-                setEmail(e.target.value);
-              }}
-            />
-          </FormGroup>
+      <Row>
+        <Col xs="7">One</Col>
+        <Col xs="5">
+          <LoginComponent
+            login={login}
+            setEmail={setEmail}
+            setPassword={setPassword}
+            error={error}
+            onLoad={() => setLoading(true)}
+          />
         </Col>
-        <Col>
-          <FormGroup>
-            <Label htmlFor="password">Password:</Label>
-            <Input
-              type="password"
-              name="password"
-              placeholder="********"
-              onChange={e => setPassword(e.target.value)}
-            />
-            {error ? (
-              <FormText color="danger">Invalid email or password!</FormText>
-            ) : null}
-          </FormGroup>
-        </Col>
-        <Button color="success" type="submit" name="Login">
-          Submit
-        </Button>
-      </Form>
+      </Row>
     </Container>
   );
 };

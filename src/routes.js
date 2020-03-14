@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 //components
 import Main from "./Components/Main";
-import Login from "./Components/Login";
+import Login from "./Containers/LoginContainer";
 import SignUp from "./Components/Signup";
 import Create from "./Components/Create";
 
