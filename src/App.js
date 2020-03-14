@@ -6,7 +6,7 @@ import Nav from "./Components/Nav";
 
 function App() {
   return (
-    <div className="App">
+    <div className="fonting">
       <Nav />
       <div className="container">
         <main>

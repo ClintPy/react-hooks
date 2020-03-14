@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import firebase from "../Firebase/config";
+import React from "react";
 
 const Main = () => {
-    return(
-        <React.Fragment>
-            <p>Main h</p>
-        </React.Fragment>
-    )
+  return (
+    <>
+      <p>Welcome Home</p>
+    </>
+  );
 };
 
 export default Main;

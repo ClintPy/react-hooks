@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
+import {
+  Button,
+  Navbar,
+  NavbarBrand,
+  Nav as Navigation,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 import firebase from "../Firebase/config";
 
-import "../App.css"
+import "../App.css";
 
 const Nav = props => {
   const [userState, setuserState] = useState(null);
@@ -26,43 +34,37 @@ const Nav = props => {
 
   if (userState != null) {
     buttons = (
-      <React.Fragment>
-        <li>
-          <button className="btn waves-effect waves-light" onClick={logout}>
+      <>
+          <Button color="danger" onClick={logout}>
             LogOut
-          </button>
-        </li>
-      </React.Fragment>
+          </Button>
+      </>
     );
   } else {
     buttons = (
-      <React.Fragment>
-        <li>
+      <>
+        <NavLink>
           <Link to="/signup">Sign Up</Link>
-        </li>
-        <li>
+        </NavLink>
+        <NavLink>
           <Link to="/login">LogIn</Link>
-        </li>
-      </React.Fragment>
+        </NavLink>
+      </>
     );
   }
 
   return (
-    <nav className="set_nav">
-      <div className="nav-wrapper">
-        <ul>
-          <li>
-            <Link to="/">ReactFirebaseHooks</Link>
-          </li>
-        </ul>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li>
-            <Link to="/create">New Post</Link>
-          </li>
-          {buttons}
-        </ul>
-      </div>
-    </nav>
+    <Navbar color="light" light expand="md">
+      <NavbarBrand href="/">React Firebase Hooks</NavbarBrand>
+      <Navigation className="m-auto" navabar>
+        <NavItem>
+          <NavLink>
+            {userState ? <Link to="/create">New Post</Link> : null}
+          </NavLink>
+        </NavItem>
+      </Navigation>
+      {buttons}
+    </Navbar>
   );
 };
 
